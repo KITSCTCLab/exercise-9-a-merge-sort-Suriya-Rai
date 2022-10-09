@@ -1,5 +1,3 @@
-
-from turtle import right
 from typing import List
 
 def merge_sort(data) -> None:
