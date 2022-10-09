@@ -1,40 +1,40 @@
 
+from turtle import right
 from typing import List
 
 def merge_sort(data) -> None:
     
     if len(data) > 1:
         mid = len(data)//2
-        left_array = data[:mid]
-        right_array = data[mid:]
+        left_list = data[:mid]
+        right_list = data[mid:]
     
-    merge_sort(left_array)
-    merge_sort(right_array)
+        merge_sort(left_list)
+        merge_sort(right_list)
 
-    i=0
-    j=0
-    k=0
+        i=0
+        j=0
+        k=0
 
-    while i<len(left_array) and j<len(right_array):
-        if (left_array[i] <= right_array[j]):
-            data[k] = left_array[i]
+        while i<len(left_list) and j<len(right_list):
+            if left_list[i] <= right_list[j]:
+                data[k] = left_list[i]
+                i=i+1
+            
+            else:
+                data[k] = right_list[j]
+                j=j+1
+            k=k+1
+
+        while i<len(left_list) :
+            data[k] = left_list[i]
             i=i+1
-        
-        else:
-            data[k] = right_array[j]
+            k= k+1
+
+        while j<len(right_list) :
+            data[k] = right_list[j]
             j=j+1
-        k=k+1
-
-    while i<len(left_array) :
-        data[k] = left_array[i]
-        i=i+1
-        k= k+1
-
-    while j<len(right_array) :
-        data[k] = right_array[j]
-        j=j+1
-        k= k+1
-    
+            k= k+1
     
     
 
